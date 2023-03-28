@@ -2,4 +2,4 @@
 
 ## To-Do List
 
-- [ ] ъес ъес
+- [x] Example Task
