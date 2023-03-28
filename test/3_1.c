@@ -1,6 +1,6 @@
-//да се въведе последователност от символи, завършваща с enter и да се формира число, ако е възможно да се формира цяло число от въведените символи, ако не да се изведе съобщение за грешка цяло число: последователност от цифри, която може да започва със знак + или - (знакът може да липсва)
-
 #include <stdio.h>
+
+#define MAX_DIGITS 10
 
 int main() {
     char c;
@@ -8,6 +8,10 @@ int main() {
     printf("Enter a sequence of symbols: ");
     while ((c = getchar()) != '\n') {
         if (c >= '0' && c <= '9') {
+            if (digit_count == MAX_DIGITS) {
+                printf("Invalid input\n");
+                return 1;
+            }
             value = value * 10 + (c - '0');
             digit_count++;
         } else if (c == '+' && digit_count == 0) {
