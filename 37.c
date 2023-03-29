@@ -1,3 +1,4 @@
+//check if the array is symmetrical
 #include <stdio.h>
 
 #define MAX_SIZE 100
