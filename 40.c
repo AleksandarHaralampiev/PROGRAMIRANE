@@ -1,52 +1,52 @@
-// да се въведат годишните оценки на учениците и да се изчислят а) средните резултати на ученицик б) средния резултат на класа по всички предмети в) общия среден успех на класа
+//linear search
+/*#include <stdio.h>
 
-#include <stdio.h>
+int linearSearch(int arr[], int n, int x) {
+   for (int i = 0; i < n; i++) {
+      if (arr[i] == x) {
+         return i;
+      }
+   }
+   return -1;
+}
 
 int main() {
-    int num_students, num_subjects, i, j, sum;
-    float grade, student_avg, class_avg, subject_avg, total_avg;
+   int arr[] = {3, 5, 2, 1, 8, 6};
+   int n = sizeof(arr) / sizeof(arr[0]);
+   int x = 8;
+   int index = linearSearch(arr, n, x);
+   if (index == -1) {
+      printf("Element not found");
+   } else {
+      printf("Element found at index %d", index);
+   }
+   return 0;
+}
+*/
 
-    printf("Enter the number of students in the class: ");
-    scanf("%d", &num_students);
+//linear search in a sorted array
+#include <stdio.h>
 
-    printf("Enter the number of subjects: ");
-    scanf("%d", &num_subjects);
+int linearSearch(int arr[], int n, int x) {
+   for (int i = 0; i < n; i++) {
+      if (arr[i] == x) {
+         return i;
+      } else if (arr[i] > x) {
+         return -1;
+      }
+   }
+   return -1;
+}
 
-    // Calculate average grade for each student
-    for (i = 1; i <= num_students; i++) {
-        sum = 0;
-        for (j = 1; j <= num_subjects; j++) {
-            printf("Enter the grade for student %d, subject %d: ", i, j);
-            scanf("%f", &grade);
-            sum += grade;
-        }
-        student_avg = (float) sum / num_subjects;
-        printf("The average grade for student %d is: %.2f\n", i, student_avg);
-    }
-
-    // Calculate average grade for each subject
-    for (j = 1; j <= num_subjects; j++) {
-        sum = 0;
-        for (i = 1; i <= num_students; i++) {
-            printf("Enter the grade for student %d, subject %d: ", i, j);
-            scanf("%f", &grade);
-            sum += grade;
-        }
-        subject_avg = (float) sum / num_students;
-        printf("The average grade for subject %d is: %.2f\n", j, subject_avg);
-    }
-
-    // Calculate overall class average
-    sum = 0;
-    for (i = 1; i <= num_students; i++) {
-        for (j = 1; j <= num_subjects; j++) {
-            printf("Enter the grade for student %d, subject %d: ", i, j);
-            scanf("%f", &grade);
-            sum += grade;
-        }
-    }
-    total_avg = (float) sum / (num_students * num_subjects);
-    printf("The overall average grade for the class is: %.2f\n", total_avg);
-
-    return 0;
+int main() {
+   int arr[] = {1, 2, 3, 4, 5, 6};
+   int n = sizeof(arr) / sizeof(arr[0]);
+   int x = 8;
+   int index = linearSearch(arr, n, x);
+   if (index == -1) {
+      printf("Element not found");
+   } else {
+      printf("Element found at index %d", index);
+   }
+   return 0;
 }
