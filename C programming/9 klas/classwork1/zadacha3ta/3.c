@@ -9,14 +9,12 @@
 #include "transformation.h"
 #include <stdio.h>
 
-int main() {
+int main()
+{
     char input[100];
-    fgets(input, 100, stdin);
-
-    Transformation trans = stringToLong(input);
-
-    printf("Result: %ld\n", trans.result);
-    printf("Error: %s\n", trans.error);
-
+    scanf("%s", input);
+    struct transformation tmp = StringToLong(input);
+    printf("%ld\n", tmp.result);
+    printf("%s\n", tmp.error);
     return 0;
 }
