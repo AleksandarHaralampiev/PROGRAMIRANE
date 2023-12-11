@@ -1,6 +1,37 @@
-N = int(input("What do you want he number to be: "))
-lenght = len(str(N))
-x = 5*10**(lenght-1)
-x2 = x
-x3 = x
+"""
+Да се напише програма, която изчислява корен квадратен и корен трети чрез метода на Башкхали и Херонов метод за корен трети. Математическото записване на тези методи е следното:
+N - числото, на което трябва да се намери корен квадратен и корен трети.
+X - най-доброто решение
+Xn - текущото решение
+X(n-1) - предишното решение
 
+Формулата за корен квадратен (Башкхали):
+A = (N - X(n-1) ** 2)/(2*X(n-1))
+
+B = X(n-1) + N
+Xn = B - ((A ** 2)/(2*B))
+
+Формулата за корен трети (Херон):
+
+
+Xn = (1/3) * ((2*X(n-1)) + (N/(X(n-1)**2)))
+"""
+
+
+def babylonian_square_root(N):
+    Xn = 1
+    for i in range (10):
+        A = (N-Xn**2)/(2*Xn)
+        B = Xn + A
+        Xn = B - ((A ** 2)/(2*B))
+    return Xn
+def heron_cube_root(N):
+    Xn = 1
+    for i in range(10):
+        Xn = (1 / 3) * ((2 * Xn) + (N / (Xn ** 2)))
+    return Xn
+
+N = int(input("Enter number: "))
+
+print("Square root: ", babylonian_square_root(N))
+print("Cube root:", heron_cube_root(N))
