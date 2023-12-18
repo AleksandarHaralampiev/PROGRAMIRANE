@@ -9,7 +9,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "mystrings.h"
 
 int strlenght(char *str) {
@@ -40,31 +39,10 @@ int strcompare(char *str1, char *str2) {
         if (str1[i] > str2[i]) {
             return 1;
         }
-        if (str1[i] < str2[i]) {
+        else if (str1[i] < str2[i]) {
             return -1;
         }
         i++;
     }
-    if (str1[i] == '\0' && str2[i] == '\0') {
-        return 0;
-    }
-    if (str1[i] == '\0') {
-        return -1;
-    }
-    return 1;
-}
-/*
-int main(){
-    char str1[100];
-    char str2[100];
-    printf("Enter first string: ");
-    scanf("%s", str1);
-    printf("Enter second string: ");
-    scanf("%s", str2);
-    printf("strlength of %s is %d\n", str1, strlenght(str1));
-    printf("strconcat of %s and %s is ", str1, str2);
-    strconcat(str1, str2);
-    printf("%s\n", str1);
-    printf("strcompare of %s and %s is %d\n", str1, str2, strcompare(str1, str2));
     return 0;
-}*/
+}

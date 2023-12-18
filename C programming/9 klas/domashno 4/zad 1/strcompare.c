@@ -1,19 +1,11 @@
-int strcompare(char *str1, char *str2) {
-    int i = 0;
-    while (str1[i] != '\0' && str2[i] != '\0') {
-        if (str1[i] > str2[i]) {
-            return 1;
-        }
-        if (str1[i] < str2[i]) {
-            return -1;
-        }
-        i++;
+#include "mystrings.h"
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        printf("Въведи само два аргумента\n");
+        return 1;
     }
-    if (str1[i] == '\0' && str2[i] == '\0') {
-        return 0;
-    }
-    if (str1[i] == '\0') {
-        return -1;
-    }
-    return 1;
+    printf("%d\n", strcompare(argv[1], argv[2]));
+    return 0;
 }
