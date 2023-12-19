@@ -1,14 +1,16 @@
+#include "mystrings.h"
+#include <stdio.h>
 
-void strconcat(char *str1, char *str2) {
-    int i = 0;
-    int j = 0;
-    while (str1[i] != '\0') {
-        i++;
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        printf("Въведи само два аргумента\n");
+        return 1;
     }
-    while (str2[j] != '\0') {
-        str1[i] = str2[j];
-        i++;
-        j++;
+    if (strlength(argv[1]) > 50 || strlength(argv[2]) > 50) {
+        printf("Трябва низовете да са по-малко от 50 символа\n");
+        return 1;
     }
-    str1[i] = '\0';
+    strconcat(argv[1], argv[2]);
+    printf("%s\n", argv[1]);
+    return 0;
 }

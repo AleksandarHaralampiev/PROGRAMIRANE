@@ -1,18 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int strlenght(char *str) {
-    int i = 0;
-    while (str[i] != '\0') {
-        i++;
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        printf("you have entered more thanm one argument\n");
+        return 1;
     }
-    return i;
-}
-
-int main(){
-    char str1[100];
-    printf("Enter string: ");
-    scanf("%s", str1);
-    printf("strlength of %s is %d\n", str1, strlenght(str1));
+    printf("%d\n", strlength(argv[1]));
     return 0;
 }
