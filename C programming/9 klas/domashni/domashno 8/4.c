@@ -14,6 +14,16 @@ int comparedesc(const void *const a, const void *const b){
     else return 0;
 }
 
-int main(){
-    const void
+int main() {
+    int x;
+    int y;
+    printf("Enter x: ");
+    scanf("%d", &x);
+    printf("Enter y: ");
+    scanf("%d", &y);
+
+    printf("compareasc result: %d\n", compareasc(&x, &y));
+    printf("comparedesc result: %d\n", comparedesc(&x, &y));
+
+    return 0;
 }

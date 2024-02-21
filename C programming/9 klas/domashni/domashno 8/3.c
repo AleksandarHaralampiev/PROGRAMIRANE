@@ -1,11 +1,9 @@
 #include <stdio.h>
 
-void swap(void* a, void* b) {
-    int* pa = (int*)a;
-    int* pb = (int*)b;
-    int temp = *pa;
-    *pa = *pb;
-    *pb = temp;
+void swap(void *a, void *b){
+    int temp = *(int *)a;
+    *(int *)a = *(int *)b;
+    *(int *)b = temp;
 }
 
 int main() {
