@@ -10,7 +10,7 @@ double pow4(double num) {
     return pow(num, 4);
 }
 
-void tar(double* arr, int size, double (*func)(double)) {
+void map(double* arr, int size, double (*func)(double)) {
     for(int i = 0; i < size; i++) {
         arr[i] = func(arr[i]);
     }
@@ -37,11 +37,12 @@ int main() {
     scanf("%d", &choice);
 
     if(choice == 0) {
-        tar(arr, n, pow2);
+        map(arr, n, pow2);
     } else if(choice == 1) {
-        tar(arr, n, pow4);
+        map(arr, n, pow4);
     } else {
         printf("Invalid choice\n");
+        free(arr);
         return 1;
     }
 
