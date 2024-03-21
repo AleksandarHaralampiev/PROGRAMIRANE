@@ -40,6 +40,9 @@ int main() {
         tar(arr, n, pow2);
     } else if(choice == 1) {
         tar(arr, n, pow4);
+    } else {
+        printf("Invalid choice\n");
+        return 1;
     }
 
     printf("Result array: ");
