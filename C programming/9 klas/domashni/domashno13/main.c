@@ -43,7 +43,7 @@ int student_count = 0;
 void add_student() {
     students = realloc(students, (student_count + 1) * sizeof(Student));
     printf("Enter student name: ");
-    scanf(" %[^\n]", students[student_count].name); 
+    scanf(" %s[^\n]", students[student_count].name); 
     printf("Enter student number: ");
     scanf("%d", &students[student_count].number);
     printf("Enter student average grade: ");
