@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h> // Add missing include statement
+#include <stdbool.h> 
 
 #define MAX_NAME_LENGTH 15
-#define MAX_SUBJECTS 100 // Adjust this if needed
+#define MAX_SUBJECTS 100 
 
 int main() {
     int numSubjects;
 
-    // Get number of subjects (positive and non-zero)
+    
     do {
         printf("Enter the number of subjects (positive number): ");
         scanf("%d", &numSubjects);
-        getchar(); // Consume the newline character
+        getchar(); 
     } while (numSubjects <= 0);
 
     if (numSubjects > MAX_SUBJECTS) {
@@ -21,29 +21,27 @@ int main() {
         return 1;
     }
 
-    // Allocate memory for subject names array
+    
     char** subjects = (char**)malloc(numSubjects * sizeof(char*));
     for (int i = 0; i < numSubjects; i++) {
-        subjects[i] = (char*)malloc(MAX_NAME_LENGTH + 1); // +1 for null terminator
+        subjects[i] = (char*)malloc(MAX_NAME_LENGTH + 1);
     }
 
-    // Get subject names
+
     for (int i = 0; i < numSubjects; i++) {
         printf("Enter name of subject %d: ", i + 1);
         fgets(subjects[i], MAX_NAME_LENGTH + 1, stdin);
-        subjects[i][strcspn(subjects[i], "\n")] = '\0'; // Remove newline from name
+        subjects[i][strcspn(subjects[i], "\n")] = '\0'; 
     }
 
     int numStudents = 0;
-    // Dynamic array for student names (starts empty)
+
     char* studentNames = NULL;
 
-    // Dynamic 2D array for grades (starts empty)
     double** grades = NULL;
 
     int choice;
     do {
-        // Menu
         printf("\nMenu:\n");
         printf("1. Enter a student\n");
         printf("2. Print the class diary\n");
