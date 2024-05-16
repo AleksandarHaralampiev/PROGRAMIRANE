@@ -4,8 +4,6 @@
 typedef double ListType;
 typedef unsigned int uint;
 
-
-
 struct ListNode {
   ListType value;
   struct ListNode * next;
@@ -31,6 +29,6 @@ ListType popBack(LinkedList * list);
 
 void release(LinkedList * list);
 
-void forEeach(LinkedList * list, void (*callback)(uint, ListType));
+void forEach(LinkedList * list, void (*callback)(uint, ListType));
 
 #endif

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// DYNAMIC ARRAY HEADER FILE
+>>>>>>> dd2efc81a64d75be82e557fa630acf7702e00201
 #ifndef DYN_ARR_H
 #define DYN_ARR_H
 

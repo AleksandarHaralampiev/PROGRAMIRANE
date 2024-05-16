@@ -102,7 +102,7 @@ void release(LinkedList * list) {
   }
 }
 
-void forEeach(LinkedList * list, void (*callback)(uint, ListType)) {
+void forEach(LinkedList * list, void (*callback)(uint, ListType)) {
   struct ListNode * currentNode = list->head;
 
   uint index = 0;
