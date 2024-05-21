@@ -5,4 +5,6 @@
 .vscode/launch.json
 output
 env
+*.out
+
 ```
